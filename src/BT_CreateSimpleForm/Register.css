@@ -1,0 +1,29 @@
+
+.headerHobby {
+vertical-align: top;
+color:blue;
+}
+
+.textOrange{
+    color:orangered;
+}
+
+.textBlue{
+    color:blue;
+}
+
+.headerForm{
+    background-color:lightcyan;
+    color:blue;
+    text-align: left;
+    font-size: large;
+    font-weight: bold;
+}
+
+table{
+    width:70%;
+    margin:0px;
+    background-color: ivory;
+    color: blue;
+}
+
