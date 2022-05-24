@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+<link href="CreateSimpleForm.css"  rel="stylesheet"/>
+</head>
+<body>
+    <form method="get" action="CreateSimpleForm.html">
+        <table>
+            <tr>
+                <td colspan="4" class="headerForm">SỞ THÍCH CỦA BẠN</td>
+            </tr>       
+            <tr>
+                <td><label class="textBlue">Họ và tên</label></td>
+                <td colspan="3"><input type="text" id="inpName" alt="inputName"/></td>
+            </tr>   
+            <tr>
+                <td><label class="textBlue">Email</label></td>
+                <td colspan="3"><input type="email" id="inpEmail" alt="inputEmail"/></td>
+            </tr>  
+            <tr>
+                <td rowspan="3" class="headerHobby" >Sở thích</td>
+                <td class="textOrange">
+                    <input type="checkbox" id="chkHobby1" value ="thethao"/>
+                    <label for="chkHobby1"> Thể thao</label>
+                </td>
+                <td class="textOrange">
+                    <input type="checkbox" id="chkHobby2" value ="amnhac"/>
+                    <label for="chkHobby2"> Âm nhạc</label>
+                </td>
+                <td class="textOrange">
+                    <input type="checkbox" id="chkHobby3" value ="docsach"/>
+                    <label for="chkHobby3"> Đọc sách</label>
+                </td>                
+            </tr>
+            <tr >
+                <td class="textOrange">
+                    <input type="checkbox" id="chkHobby4" value ="luotweb"/>
+                    <label for="chkHobby4"> Lướt web</label>
+                </td>
+                <td class="textOrange">
+                    <input type="checkbox" id="chkHobby5" value ="choigame"/>
+                    <label for="chkHobby5"> Chơi game</label>
+                </td>
+                <td class="textOrange">
+                    <input type="checkbox" id="chkHobby6" value ="dienanh"/>
+                    <label for="chkHobby6"> Điện ảnh</label>
+                </td>                
+            </tr>
+            <tr>
+                <td class="textOrange">
+                    <input type="checkbox" id="chkHobby7" value ="dulich"/>    
+                    <label for="chkHobby7"> Du lịch</label>
+                </td>                
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3">
+                    <input type="submit" id="btnSubmit" value="Gửi thông tin"/>
+                    <input type="reset" id="btnReset" value="Nhập lại"/>
+                </td>
+            </tr>
+        </table>
+        
+    </form>    
+</body>
+</html>
