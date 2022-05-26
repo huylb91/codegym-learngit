@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>    
+       <script>
+           let amountMoney = parseInt(prompt("Nhập vào số tiền gửi: "));
+           let numYears = parseInt(prompt("Nhập vào số năm: "));
+           let ls = parseFloat(prompt("Nhập vào lãi suất: "));
+           
+           let finalMoney = amountMoney + (amountMoney * ls * numYears);
+           
+           document.write("Số tiền cuối cùng: " + finalMoney);
+
+       </script>
+</body>
+</html>
