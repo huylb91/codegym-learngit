@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+<link href="Create_TimeTable.css"  rel="stylesheet"/>
+</head>
+<body>    
+        <table class="table1">
+            <form method="post">
+                <tr>
+                    <td colspan="4" class="headerForm">TẠO THỜI KHÓA BIỂU</td>
+                </tr>       
+                <tr>
+                    <td><label>Lớp</label></td>
+                    <td><input type="text" id="inpClass" alt="inputClass" placeholder="12A"/></td>                
+                    <td><label>Thời gian học</label></td>
+                    <td>
+                        <select>
+                            <option value="1h2h">1h-2h</option>
+                            <option value="2h3h">2h-3h</option>
+                            <option value="3h4h">3h-4h</option>
+                            <option value="4h5h">4h-5h</option>
+                        </select>
+                    </td>
+                </tr>   
+                <tr>
+                    <td><label>Giáo viên</label></td>
+                    <td><input type="text" id="inpName" alt="inputName" placeholder="Nguyễn Văn A"/></td>
+                    <td><label>Ngày học</label></td>
+                    <td>
+                        <input type="radio" id="inpStudyDate1" name="inpStudyDate"/><label for="inpStudyDate1">Thứ 2,4,6</label>
+                        <input type="radio" id="inpStudyDate2" name="inpStudyDate"/><label for="inpStudyDate2">Thứ 3,5,7</label>
+                    </td>
+                </tr>    
+                <tr>   
+                    <td><label>Phòng học</label></td>             
+                    <td>                    
+                        <select id="sltRoom">
+                            <option value="a1">A1</option>
+                            <option value="a2">A2</option>
+                            <option value="a3">A3</option>
+                            <option value="a4">A4</option>
+                        </select>
+                    </td>
+                    <td><label>Mật khẩu phòng</label></td>
+                    <td><input type="text" id="inpPassword" alt="inputPassword"/></td>  
+                </tr>   
+                <tr>                
+                    <td colspan="4">
+                        <input type="submit" id="btnSubmit" value="Tạo"/>
+                        <input type="reset" id="btnReset" value="Hủy"/>
+                    </td>                            
+                </tr> 
+            </form>
+        </table>
+        <br/>
+        <br/>
+        <table id="table2">
+            <form method="get">
+                <tr>
+                    <th colspan="3" class="th3" ></td>
+                    <th class="th1">Thứ 3</td>
+                    <th class="th1">Thứ 5</td>
+                    <th class="th1">Thứ 7</td>
+                </tr>
+                <tr class="th2">                    
+                    <th>Tuần</td>
+                    <th>Ngày bắt đầu</td>
+                    <th>Ngày kết thúc</td>
+                    <th colspan="3">Môn học</td>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td><input type="date" id="inpStart1"/>
+                    <td><input type="date" id="inpEnd1"/></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td><input type="date" id="inpStart1"/>
+                    <td><input type="date" id="inpEnd1"/></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td><input type="date" id="inpStart1"/>
+                    <td><input type="date" id="inpEnd1"/></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </form>
+        </table>    
+</body>
+</html>
