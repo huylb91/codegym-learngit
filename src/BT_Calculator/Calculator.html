@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <input type="text" id="inputNumber1" />
+    <input type="text" id="inputNumber2" />
+    <br/>
+    <button type="button" onclick="add()">+</button>
+    <button type="button" onclick="minus()">-</button>
+    <button type="button" onclick="multiple();">*</button>
+    <button type="button" onclick="divide();">/</button>
+    <br/>    
+    <label id="result"></label>
+    <script>    
+
+    function add(){
+         document.getElementById("result").textContent = "Result addition: " + (parseInt(document.getElementById("inputNumber1").value) + parseInt(document.getElementById("inputNumber2").value));
+    }
+    function minus(){
+         document.getElementById("result").textContent = "Result addition: " + (parseInt(document.getElementById("inputNumber1").value) - parseInt(document.getElementById("inputNumber2").value));
+    }
+    function multiple(){
+         document.getElementById("result").textContent = "Result addition: " + (parseInt(document.getElementById("inputNumber1").value) * parseInt(document.getElementById("inputNumber2").value));
+    }
+    function divide(){
+         document.getElementById("result").textContent = "Result addition: " + (parseInt(document.getElementById("inputNumber1").value) / parseInt(document.getElementById("inputNumber2").value));
+    }
+
+    </script>
+</body>
+</html>
