@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <h1>TÍNH ĐIỂM ĐH KHỐI D</h1>
+    <label>Môn Toán</label>
+    <input type="text" id="inputToan" />
+    <br/>
+    <label>Môn Văn</label>
+    <input type="text" id="inputVan" />
+    <br/>
+    <label>Môn Anh</label>
+    <input type="text" id="inputAnh" />
+    <br/>
+    <label>Khu Vực</label>
+    <select id="selKV">
+        <option value="kv1">KV1</option>
+        <option value="kv2">KV2</option>
+        <option value="kv2nt">KV2-NT</option>
+        <option value="kv3">KV3</option>
+    </select>
+    <br/>
+    <button type="button" onclick="check()">Tính điểm</button>
+    <br/>    
+    <label id="result"></label>
+    <script>    
+
+    function check(){
+         let inputToan = parseInt(document.getElementById("inputToan").value);
+         let inputVan = parseInt(document.getElementById("inputVan").value);
+         let inputAnh = parseInt(document.getElementById("inputAnh").value);
+         let inputKV = document.getElementById("selKV").value;
+
+         let numPlus;
+
+         if (inputKV == "kv1") numPlus = 0.75;
+         else if (inputKV == "kv2") numPlus = 0.25;
+         else if (inputKV == "kv2nt") numPlus = 0.5;
+         else numPlus = 0;
+
+         document.getElementById("result").textContent = "Kết quả khối D của bạn: " + (inputAnh + inputToan + inputVan + numPlus);
+    }
+ 
+
+    </script>
+</body>
+</html>
