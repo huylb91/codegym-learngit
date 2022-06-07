@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <input type="text" id="inputNumber2" />
+    <button type="button" onclick="check()">Xem giá</button>
+    <br/>    
+    <label id="result"></label>
+    <script>    
+
+    function check(){
+         let inputFruit = document.getElementById("inputNumber2").value;
+         let price;
+         if (inputFruit == "ổi") price = 20000;
+         else if (inputFruit == "dưa hấu") price = 20000;
+         else if (inputFruit == "táo") price = 30000;
+         else if (inputFruit == "xoài") price = 30000;
+         else if (inputFruit == "cam") price = 40000;
+         else if (inputFruit == "chôm chôm") price = 40000;
+         else if (inputFruit == "măng cụt") price = 50000;
+         document.getElementById("result").textContent = price + " VNĐ/KG";
+    }
+ 
+
+    </script>
+</body>
+</html>
