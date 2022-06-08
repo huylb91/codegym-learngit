@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    
+    <label id="result"></label>
+    <script>    
+    let inputHeight = parseFloat(prompt("Input Height: "));
+    let inputWeight = parseFloat(prompt("Input Weight: "));
+    
+    let numBMI = inputWeight / (inputHeight * inputHeight);
+
+    if(numBMI < 16) document.getElementById("result").textContent = "Gầy độ III";
+    else if (numBMI >= 16 && numBMI < 17) document.getElementById("result").textContent = "Gầy độ II";
+    else if (numBMI >= 17 && numBMI < 18.5) document.getElementById("result").textContent = "Gầy độ I";  
+    else if (numBMI >= 18.5 && numBMI < 25) document.getElementById("result").textContent = "Bình thường";  
+    else if (numBMI >= 25 && numBMI < 30) document.getElementById("result").textContent = "Thừa cân";
+    else if (numBMI >= 30 && numBMI < 35) document.getElementById("result").textContent = "Béo phì độ I";
+    else if (numBMI >= 35 && numBMI < 40) document.getElementById("result").textContent = "Béo phì độ II";  
+    else document.getElementById("result").textContent = "Béo phì độ III";       
+    </script>
+</body>
+</html>
