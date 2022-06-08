@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <label>Input Month</label>
+    <input type="number" id="inputMonth" />
+    
+    <br/>
+    <button type="button" onclick="check()">Tính ngày</button>
+    <br/>    
+    <label id="result"></label>
+    <script>    
+
+    function check(){
+         let inputMonth = parseInt(document.getElementById("inputMonth").value);
+         switch(inputMonth){
+             case 1:
+             case 3:
+             case 5:
+             case 7:
+             case 8: 
+             case 10: 
+             case 12:
+                 {
+                     alert("31 days");
+                     break;
+                 }
+             case 4:
+             case 6:
+             case 9:
+             case 11:             
+                 {
+                     alert("30 days");
+                     break;
+                 }    
+             case 2:{
+                    alert("28 or 29 days");
+                    break;
+             }     
+         }
+
+         if (inputKV == "kv1") numPlus = 0.75;
+         else if (inputKV == "kv2") numPlus = 0.25;
+         else if (inputKV == "kv2nt") numPlus = 0.5;
+         else numPlus = 0;
+
+         document.getElementById("result").textContent = "Kết quả khối D của bạn: " + (inputAnh + inputToan + inputVan + numPlus);
+    }
+ 
+
+    </script>
+</body>
+</html>
