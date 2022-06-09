@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="txtAmount" />
+            </td>
+            <td>
+                <select id="slcFrom">
+                    <option>VietNam</option>
+                    <option>USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="slcTo">
+                    <option>USD</option>
+                    <option>VietNam</option>
+                </select>
+            </td>
+            <td><input type="button" id="btnConvert" onclick="check()" value="Convert"/></td>
+        </tr>
+    </table>
+    <label id="result"></label>
+
+    
+    <script>    
+
+    function check(){
+         let inputFrom = document.getElementById("slcFrom").value;
+         let inputTo = document.getElementById("slcTo").value;
+         let inputAmount = parseFloat(document.getElementById("txtAmount").value);         
+
+
+         if (inputFrom == "VietNam" && inputTo == "USD") 
+         {
+             document.getElementById("result").textContent = (inputAmount /23000) + "";
+         }
+         else if (inputFrom == "USD" && inputTo == "VietNam") 
+         {
+             document.getElementById("result").textContent = (inputAmount * 23000) + "";
+         }
+         
+         
+    }
+ 
+
+    </script>
+</body>
+</html>
