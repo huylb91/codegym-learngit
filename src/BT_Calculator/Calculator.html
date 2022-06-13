@@ -6,16 +6,177 @@
 </head>
 <body>
     <h1>Calculator</h1>
-    <input type="text" id="inputNumber1" />
-    <input type="text" id="inputNumber2" />
+    <input type="text" id="txtResult" style="text-align: right;"/>
     <br/>
-    <button type="button" onclick="add()">+</button>
-    <button type="button" onclick="minus()">-</button>
-    <button type="button" onclick="multiple();">*</button>
-    <button type="button" onclick="divide();">/</button>
+    <table>
+          <tr>
+               <td>
+                    <input type="button" id="btn1" value="1" onclick="addFormula('1')"/>
+               </td>
+               <td>
+                    <input type="button" id="btn2" value="2" onclick="addFormula('2')"/>
+               </td>
+               <td>
+                    <input type="button" id="btn3" value="3" onclick="addFormula('3')"/>
+               </td>
+               <td>
+                    <input type="button" id="btnPlus" value="+" onclick="addFormula('+')"/>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <input type="button" id="btn4" value="4" onclick="addFormula('4')"/>
+               </td>
+               <td>
+                    <input type="button" id="btn5" value="5" onclick="addFormula('5')"/>
+               </td>
+               <td>
+                    <input type="button" id="btn6" value="6" onclick="addFormula('6')"/>
+               </td>
+               <td>
+                    <input type="button" id="btnMinus" value="-" onclick="addFormula('-')"/>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <input type="button" id="btn7" value="7" onclick="addFormula('7')"/>
+               </td>
+               <td>
+                    <input type="button" id="btn8" value="8" onclick="addFormula('8')"/>
+               </td>
+               <td>
+                    <input type="button" id="btn9" value="9" onclick="addFormula('9')"/>
+               </td>
+               <td>
+                    <input type="button" id="btnMultiple" value="*" onclick="addFormula('*')"/>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <input type="button" id="btnC" value="C" onclick="addFormula('C')"/>
+               </td>
+               <td>
+                    <input type="button" id="btn0" value="0" onclick="addFormula('0')"/>
+               </td>
+               <td>
+                    <input type="button" id="btnEqual" value="=" onclick="addFormula('=')"/>
+               </td>
+               <td>
+                    <input type="button" id="btnDivide" value="/" onclick="addFormula('/')"/>
+               </td>
+          </tr>
+    </table>
     <br/>    
-    <label id="result"></label>
+
     <script>    
+
+     function addFormula(btnValue)
+     {
+          let txtCurr = document.getElementById("txtResult").value;
+          let a=0,b=0, check = 0;
+          if(btnValue == "C" )
+          {
+               document.getElementById("txtResult").value = "";
+          }
+          else if(btnValue == "+")
+          {
+               if (checkExistedFormula(txtCurr)==0)
+               {
+                    txtCurr += btnValue;
+                    document.getElementById("txtResult").value = txtCurr;
+               }
+               else 
+               {
+                    addFormula("=");
+                    txtCurr = document.getElementById("txtResult").value + btnValue;
+                    document.getElementById("txtResult").value = txtCurr;
+               }
+          }
+          else if(btnValue == "-")
+          {
+               if (checkExistedFormula(txtCurr)==0)
+               {
+                    txtCurr += btnValue;
+                    document.getElementById("txtResult").value = txtCurr;
+               }
+               else 
+               {
+                    addFormula("=");
+                    txtCurr = document.getElementById("txtResult").value + btnValue;
+                    document.getElementById("txtResult").value = txtCurr;
+               }
+          }
+          else if(btnValue == "*")
+          {
+               if (checkExistedFormula(txtCurr)==0)
+               {
+                    txtCurr += btnValue;
+                    document.getElementById("txtResult").value = txtCurr;
+               }
+               else 
+               {
+                    addFormula("=");
+                    txtCurr = document.getElementById("txtResult").value + btnValue;
+                    document.getElementById("txtResult").value = txtCurr;
+               }
+          }
+          else if(btnValue == "/")
+          {
+               if (checkExistedFormula(txtCurr)==0)
+               {
+                    txtCurr += btnValue;
+                    document.getElementById("txtResult").value = txtCurr;
+               }
+               else 
+               {
+                    addFormula("=");
+                    txtCurr = document.getElementById("txtResult").value + btnValue;
+                    document.getElementById("txtResult").value = txtCurr;
+               }
+          }
+          else if(btnValue == "=")
+          {
+               if (txtCurr.indexOf("+") > 0) 
+               {
+                    check = txtCurr.indexOf("+"); 
+                    a = parseInt(txtCurr.substring(0,check));
+                    b = parseInt(txtCurr.substring(check+1,txtCurr.lenght));      
+                    document.getElementById("txtResult").value= ""+ (a + b);                            
+               } 
+               else if (txtCurr.indexOf("-") > 0) 
+               {
+                    check = txtCurr.indexOf("-"); 
+                    a = parseInt(txtCurr.substring(0,check));
+                    b = parseInt(txtCurr.substring(check+1,txtCurr.lenght));      
+                    document.getElementById("txtResult").value= ""+ (a - b);                  
+               } 
+               else if (txtCurr.indexOf("*") > 0) 
+               {
+                    check = txtCurr.indexOf("*"); 
+                    a = parseInt(txtCurr.substring(0,check));
+                    b = parseInt(txtCurr.substring(check+1,txtCurr.lenght));      
+                    document.getElementById("txtResult").value= ""+ (a * b);                     
+               } 
+               else if (txtCurr.indexOf("/") > 0) 
+               {
+                    check = txtCurr.indexOf("/"); 
+                    a = parseInt(txtCurr.substring(0,check));
+                    b = parseInt(txtCurr.substring(check+1,txtCurr.lenght));      
+                    document.getElementById("txtResult").value= ""+ (a / b);                   
+               }              
+          }
+          else
+          {
+               txtCurr += btnValue;
+               document.getElementById("txtResult").value = txtCurr;
+          }
+     }
+
+     function checkExistedFormula(strCheck)
+     {                        
+          if (strCheck.indexOf("+")>0 || strCheck.indexOf("-")>0 || strCheck.indexOf("*")>0 || strCheck.indexOf("/")>0 ) return 1;
+          else return 0;          
+     }
 
     function add(){
          document.getElementById("result").textContent = "Result addition: " + (parseInt(document.getElementById("inputNumber1").value) + parseInt(document.getElementById("inputNumber2").value));
