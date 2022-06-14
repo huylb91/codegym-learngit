@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    
+    <input type="button" value="Play" onclick="Play()" />
+    <script>    
+    function Play(){
+        let inputNum = parseInt( prompt("input range: "));
+        let intRandom = parseInt(generateRandomFloatInRange(0,inputNum));
+        let intGuess = 0,intWin;
+        for(let i=0;i<3;i++)
+        {
+            intGuess = parseInt( prompt("Guess: "));
+            if(intGuess==intRandom)
+            {
+                intWin = 1;
+                alert("Win true number: "+ intRandom);
+                break;
+            }
+            else if(intGuess > intRandom)
+            {
+                alert("Larger number");
+            }
+            else
+            {
+                alert("Smaller number");
+            }
+            
+        }
+        if(intWin == 0) alert("Lose, true number: "+ intRandom);
+    }
+
+    // Generate a random number between 2.5 and 10.75, including both 2.5 and 10.75
+        function generateRandomFloatInRange(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+    </script>
+</body>
+</html>
