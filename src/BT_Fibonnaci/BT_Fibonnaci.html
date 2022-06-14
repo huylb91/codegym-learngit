@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    
+    <input type="button" value="Play" onclick="Play()" />
+    <script>    
+    function Play(){
+        let inputNum = parseInt( prompt("input number: "));
+        let a = 1,b=1,c=0;        
+        let result = a + " " + b;
+        for(let i=2;i<inputNum;i++)
+        {            
+            c=a+b;
+            result += " "+ c;
+            a=b;
+            b=c;                        
+        }
+        alert(result);
+    }
+
+    </script>
+</body>
+</html>
