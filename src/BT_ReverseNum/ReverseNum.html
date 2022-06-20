@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <!-- <label>Nhập vào 1 số</label>
+    <br/>
+    <input type="text" id = "txtInput" />
+    <br/>
+    <input type="button" id="btnOK" value="OK"/> -->
+
+    <script>    
+
+    let inputNum = prompt("Nhập vào 1 số: ");
+    let result = "";
+    for(let i = inputNum.length;i > 0;i--)
+    {       
+        result += inputNum.substring(i,i-1);    
+    }
+    alert(result); 
+
+    </script>
+</body>
+</html>
