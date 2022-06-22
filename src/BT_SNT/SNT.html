@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    
+        <script>    
+            let a = parseInt(prompt("Nhập vào số a: "));            
+            let checked = 0;
+            let result ="";
+            for (let i = 2;i<=a;i++)
+            {
+                for (let j = 1;j<=i;j++)
+                {
+                    if (i%j==0 && (j!=1 && j != i))
+                    {
+                        checked=1;
+                        break;
+                    }
+                }
+                if(checked == 0) 
+                {
+                    result+=i+" , ";
+                }
+                checked=0;
+            }
+            document.write(result);
+            
+
+        </script>
+
+    
+</body>
+</html>
