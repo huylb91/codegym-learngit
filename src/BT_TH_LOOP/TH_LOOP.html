@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    
+    <script>
+        for (let i=1;i<=100;i++)
+        {
+            if (i==99) document.write("99 --> stop");
+            break;
+        }
+        //--------------------------------
+        document.write("<br/>");
+        //--------------------------------
+
+        let nd=parseInt(prompt("Nhập vào nhiệt độ: "));
+
+        if(nd>100) document.write("Giảm nhiệt độ");
+        else document.write("Tăng nhiệt độ");
+
+        //--------------------------------
+        document.write("<br/>");
+        //--------------------------------
+
+        let a = 1,b=1,c=0;        
+        let result = a + " " + b;
+        let multiple_by_5 = 0,checked_multi_by_5 = 0;
+        let sum = a + b;
+        for(let i=2;i<20;i++)
+        {            
+            c=a+b;
+            result += " "+ c;
+            sum += c;
+            if(c%5==0 && checked_multi_by_5==0) 
+            {
+                multiple_by_5 = c;
+                checked_multi_by_5 = 1;
+            }
+            a=b;
+            b=c;                        
+        }
+        document.write("20 số fibonacci đầu: " + result);
+
+        //--------------------------------
+        document.write("<br/>");
+        //--------------------------------
+        document.write("Số fibonnaci đầu chia hết cho 5: " + multiple_by_5);
+
+        //--------------------------------
+        document.write("<br/>");
+        //--------------------------------
+        document.write("Tổng 20 số fibonnaci đầu : " + sum);
+        //--------------------------------
+        document.write("<br/>");
+        //--------------------------------
+
+        let count=0,checked_num = 1;
+        let result_2 = "";
+        while (count <30)
+        {
+            while(checked_num != 0)
+            {
+                if(checked_num %7==0)
+                {
+                    result_2+= checked_num + " , ";
+                    checked_num++;
+                    break;
+                }
+                checked_num++;
+            }
+            count++;
+        }
+        document.write("Tổng 30 số chia hết cho 7 đầu : " + result_2);
+
+        //--------------------------------
+        document.write("<br/>");
+        //--------------------------------
+
+       for(let i=1;i<101;i++)
+       {
+        if(i%3==0 && i%5==0) document.write("FizzBuzz");
+        else if (i%3==0) document.write("Fizz");
+        else if (i%5==0) document.write("Buzz");
+        else document.write(i);
+        document.write("<br/>");
+       }
+
+
+    </script>
+    
+</body>
+</html>
