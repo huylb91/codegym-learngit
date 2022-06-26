@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <input type="text" id="txtInput"/>
+    <input type="button" id="btnAdd" value ="Add" onclick="addElement()"/>
+    <br/>
+    <p id="txtResult"></p>
+    <script>
+        let arr = [];
+        function addElement()
+        {            
+            arr.push(document.getElementById("txtInput").value);
+            document.getElementById("txtResult").textContent = arr;
+        }
+    </script>
+</body>
+</html>
