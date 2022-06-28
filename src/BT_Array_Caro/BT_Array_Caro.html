@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <p id="txtResult"></p>
+    <table style="border: solid">
+        <script>
+            let turn = 0;
+            for(let i=0;i<5;i++)
+            {
+                document.write("<tr>");
+                for (let j=0;j<5;j++)
+                {
+                    document.write('<td><input type="button" id="'+i+j+'" onclick = "play(\''+i+j+'\')" value=" "></td>');
+                }
+                document.write("</tr>");
+            }
+
+            function play(idBtn){
+                if(turn == 0)
+                {
+                    document.getElementById(idBtn).value = "X";
+                    if (checkWin(idBtn.substring(0,1),idBtn.substring(1,2)))
+                    {
+                        document.getElementById("txtResult").textContent = "X win";
+                    }
+                    else
+                    {
+                        turn = 1;
+                    }                    
+                }
+                else if(turn == 1)
+                {
+                    document.getElementById(idBtn).value = "O";
+                    if (checkWin(idBtn.substring(0,1),idBtn.substring(1,2)))
+                    {
+                        document.getElementById("txtResult").textContent = "O win";
+                    }
+                    else
+                    {
+                        turn = 0;
+                    }                    
+                }
+            }
+
+            function checkWin(x,y)
+            {
+                if (checkWin_Row(x,y)||checkWin_Col(x,y)||checkWin_Cross(x,y))                
+                {
+                    return true;
+                }
+                else return false;
+            }
+
+            function checkWin_Row(x,y)
+            {
+                let count=1;
+                let firstValue="",secondValue="";
+                for (let i=0;i<4;i++)
+                {
+                    if (count==3) return true;
+                    firstValue= document.getElementById(x+""+i).value;
+                    secondValue = document.getElementById(x+""+(i+1)).value;
+                    
+                    if((firstValue==secondValue) && firstValue != " ") 
+                    {
+                        count++;                        
+                    }
+                    else
+                    {
+                        count = 1;
+                        if (5-i<3) return false;                
+                    }
+                }
+                return false;
+            }
+
+            function checkWin_Col(x,y)
+            {
+                let count=1;
+                let firstValue="",secondValue="";
+                for (let i=0;i<4;i++)
+                {
+                    if (count==3) return true;
+                    firstValue= document.getElementById(i+""+y).value;
+                    secondValue = document.getElementById((i+1)+""+y).value;
+                    
+                    if((firstValue==secondValue) && firstValue != " ") 
+                    {
+                        count++;                        
+                    }
+                    else
+                    {
+                        count = 1;
+                        if (5-i<3) return false;                
+                    }
+                }
+                return false;
+            }
+
+            function checkWin_Cross(x,y)
+            {
+                let count=1;
+                let firstValue="",secondValue="";
+                let i=0,j=5;
+                while (i<4)
+                {
+                    if (count==3) return true;
+                    firstValue= document.getElementById(i+""+i).value;
+                    secondValue = document.getElementById((i+1)+""+(i+1)).value;
+
+                    if((firstValue==secondValue) && firstValue != " ") 
+                    {
+                        count++;                        
+                    }
+                    else
+                    {
+                        count = 1;  
+                        if (5-i<3) return false;                                      
+                    }                  
+                    i++;
+                }
+                i=0;
+                while (i<4 || j>0)
+                {
+                    if (count==3) return true;
+                    firstValue= document.getElementById(i+""+j).value;
+                    secondValue = document.getElementById((i+1)+""+(j-1)).value;
+
+                    if((firstValue==secondValue) && firstValue != " ") 
+                    {
+                        count++;                        
+                    }
+                    else
+                    {
+                        count = 1;  
+                        if (5-i<3) return false;                                         
+                    }
+                    i++;
+                    j--;
+                }                
+                return false;
+            }
+        </script>
+    </table>
+    
+</body>
+</html>
