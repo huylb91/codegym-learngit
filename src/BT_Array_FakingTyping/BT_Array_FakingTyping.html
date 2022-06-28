@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <label> TYPING </label>
+    <br/>
+    <textarea id="txtInput" onkeydown="fakingTyping()"></textarea>
+
+    <script>
+        let pos=0;
+        let fakingString = "I'm studying JS",result="";
+        
+        function fakingTyping()
+        {
+            if(pos>fakingString.length-1) pos=0;
+            document.getElementById("txtInput").textContent="";
+            result+=fakingString.substring(pos,pos+1);
+            document.getElementById("txtInput").textContent=result;
+            pos++;
+        }
+    </script>
+    
+</body>
+</html>
