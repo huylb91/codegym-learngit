@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    
+    <table style="border:solid">
+        <script>    
+            let myColor = ["Red", "Green", "White", "Black"];
+            document.write(myColor.join(","));
+            document.write("<br/>");
+            //------------------------------------------//
+
+            let inputNum = prompt("Nhập vào 1 số: ");
+            let result = [];
+            result.push(inputNum[0]);
+            for (let i=1;i<=inputNum.length;i++)
+            {
+                if (inputNum[i] %2==0 && inputNum[i-1]%2==0)
+                {
+                    result.push("-",inputNum[i]);
+                }
+                else 
+                {
+                    result.push(inputNum[i]);
+                }
+            }
+            document.write(result);
+            document.write("<br/>");
+            //------------------------------------------//
+
+            let inputText = prompt("Nhập vào 1 chuỗi: ");
+            let result02 = [];
+            for (let i=0;i<inputText.length;i++)
+            {
+                if (!isNaN(inputText[i]*1))
+                {
+                    continue;
+                }
+                else if (inputText[i] == inputText[i].toUpperCase())
+                {
+                    result02.push(inputText[i].toLowerCase());
+                }
+                else
+                {
+                    result02.push(inputText[i].toUpperCase());
+                }
+            }
+            document.write(result02);
+
+        </script>
+
+    </table>
+    
+</body>
+</html>
