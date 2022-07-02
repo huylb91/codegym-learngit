@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    
+
+    <script>    
+        compareTwoInt();
+        checkStart();
+        calculatePow();
+        calculateCVDT();
+        calculateFactorial();
+
+        //------------ Bai 1: ----------------//
+        function compareTwoInt()
+        {
+            let a = parseInt(prompt("Nhập số thứ 1: "));
+            let b = parseInt(prompt("Nhập số thứ 1: "));
+            if (a>b) alert("a>b");
+            else if(a<b) alert("a<b");
+            else alert("a=b");
+        }        
+
+        //------------ Bai 2: ----------------//
+        function checkStart()
+        {
+            let txtInput = prompt("Nhập tên ngôi sao: ");
+            let arr=["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"];
+            let arr2=["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major","Leo"];
+            let check=0,pos=-1;
+
+            for (let i = 0;i<arr.length;i++)
+            {
+                if(arr[i].toLowerCase()==txtInput.toLowerCase())
+                {
+                    check = 1;
+                    pos=i;
+                    break;
+                }
+            }
+
+            if(check == 0) document.write("Ngôi sao không có trong mảng");
+            else{
+                document.write("Ngôi sao: " + txtInput + " có chòm sao là: " + arr2[pos]);
+            }
+        }
+
+        //------------ Bai 3: ----------------//
+        function calculatePow()
+        {
+            let x = parseInt(prompt("Nhập vào 1 số: "));
+            document.write("<br/>");
+            document.write("Bình phương là: " + (x*x));
+        }
+
+        //------------ Bai 4: ----------------//
+        function calculateCVDT()
+        {
+            let r = parseInt(prompt("Nhập vào bán kính: "));
+            document.write("<br/>");
+            document.writeln("Chu vi hình tròn là: " + (2*3.14*r));
+            document.write("<br/>");
+            document.writeln("Diện tích hình tròn là: " + (3.14*r*r));
+        }
+
+        //------------ Bai 5: ----------------//
+        function calculateFactorial()
+        {
+            let y = parseInt(prompt("Nhập vào 1 số: "));
+            let result=1;
+            for(let i=1;i<=y;i++)
+            {
+                result*=i;
+            }            
+            document.write("<br/>");
+            document.writeln("Giai thừa tới "+ y +" là: " + result);            
+        }
+
+
+    </script>
+</body>
+</html>
