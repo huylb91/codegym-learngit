@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <label>Add New Product</label>
+    <br/>
+    <form method="post">
+        <input type="text" id="txtNewProduct"/>
+        <input type="button" id="btnNewProduct" onclick="addNewProduct()" value ="Add new Product"/>
+    </form>    
+    <br/>
+    <div>
+        <label>Display All Product</label>
+        <table id="tblResult">
+            <script>    
+            let arr = new Array().fill(new Array(2));
+
+            function addNewProduct()
+            {
+                let id = arr.length+1;
+                let name = document.getElementById("txtNewProduct").value;
+                let arr2=[id,name];
+                arr.push(arr2);
+
+                displayArr(arr);
+            }       
+            
+            function editProduct(pos)
+            {
+                let newName = prompt("Nhập tên sản phẩm mới: ");            
+                
+                arr[pos][1]= newName;
+
+                displayArr(arr);
+            }     
+            
+            function deleteProduct(pos)
+            {                                            
+                swapInsideArray(pos);
+                arr.pop();
+                displayArr(arr);
+            }     
+
+            function swapInsideArray(pos)
+            {   
+                let tempValue="";
+                for(let i=pos;i<arr.length-1;i++)
+                {
+                    tempValue = arr[i][1];
+                    arr[i][1] = arr[i+1][1];
+                    arr[i+1][1] = tempValue;
+                }              
+            }
+            
+            function displayArr(x)
+            {                
+                let result="";
+                for(let i = 0;i<x.length;i++)
+                {
+                    result+="<tr><td>"+x[i][1]
+                            +"</td><td><input type='button' id='btnEditProduct' value='Edit' onclick='editProduct("+i
+                            +")'/></td><td><input type='button' id='btnDelProduct' value='Delete' onclick='deleteProduct("+i+")'/></td></tr>";
+                }
+                document.getElementById("tblResult").innerHTML=result;
+            }
+            </script>
+        </table>
+    </div>
+    
+</body>
+</html>
