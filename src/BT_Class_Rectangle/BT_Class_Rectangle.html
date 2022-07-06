@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <canvas id="canRec" height="500" weight="500">
+
+    </canvas>
+    <script>
+        class Rectangle {
+            
+            constructor(d,r) {
+                    this.d = d;   
+                    this.r = r;                 
+            }
+
+            getD() {
+                return this.d;
+            }
+
+            setD(d)
+            {
+                this.d = d;
+            }
+
+            getR() {
+                return this.r;
+            }
+
+            setR(r)
+            {
+                this.r = r;
+            }
+
+            calculateDT(){
+                return this.d*this.r;
+            }
+
+            calculateCV(){
+                return 2*(this.d+this.r);
+            }
+
+            drawCanvas(){
+                let canvas = document.getElementById("canRec");
+                if (canvas.getContext)
+                {
+                    let ctx = canvas.getContext('2d');
+                    ctx.strokeRect(10,10,this.d,this.r);
+                }
+            }
+        };
+
+        let rec= new Rectangle(100,70);
+        rec.drawCanvas();
+        console.log(rec.calculateCV());
+        console.log(rec.calculateDT());
+        rec.setD(150);
+        rec.setR(100);
+        rec.drawCanvas();
+        console.log(rec.calculateCV());
+        console.log(rec.calculateDT());
+              
+    </script>
+</body>
+</html>
