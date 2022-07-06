@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <canvas id="canRec" height="500" weight="500">
+
+    </canvas>
+    <script>
+        class Temperature {
+
+            constructor(temp) {
+                    this.temp = temp;                                   
+            }
+
+            getTemp() {
+                return this.temp;
+            }
+
+            setTemp(temp)
+            {
+                this.temp = temp;
+            }    
+
+            changeCToF(){
+                return (9*this.temp/5)+32;
+            }
+
+        };
+
+        let temp= new Temperature(25);
+        
+        console.log(temp.changeCToF());
+              
+    </script>
+</body>
+</html>
