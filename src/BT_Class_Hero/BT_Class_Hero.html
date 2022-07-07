@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <div id="game" style="height:1600px ;width:1000px"></div>
+    <script>
+        function Hero(image, top, left, size, speed){
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+            this.speed = speed;
+
+            this.getHeroElement = function(){
+                return '<img width="'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+            }
+
+            this.moveRight = function(){
+                this.left += speed;
+            }
+
+            this.moveLeft = function(){
+                if (this.left>=speed)
+                {
+                    this.left-=speed;                
+                }
+            }
+
+            this.moveUp = function(){
+                if (this.top>= speed)
+                {
+                    this.top-=speed;
+                }
+            }
+
+            this.moveDown = function(){
+                this.top+=speed;
+            }
+        }
+
+            var hero = new Hero('pikachu.png', 20, 30, 200,60);
+
+            function start(){
+            if(hero.left < window.innerWidth - hero.size){
+                hero.moveRight();
+            }
+            else if(hero.left >= window.innerWidth - hero.size && hero.top < window.innerHeight - hero.size)
+            {
+                hero.moveDown();
+            }
+            else if(hero.left < window.innerWidth - hero.size && hero.top >= window.innerHeight - hero.size)
+            {
+                hero.moveLeft();
+            }
+            else {
+                hero.moveUp();
+            }
+            document.getElementById('game').innerHTML = hero.getHeroElement();
+            setTimeout(start, 500)
+            }
+
+            start();
+              
+    </script>
+</body>
+</html>
