@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <script>
+        class Rat{
+            constructor(name,weight,speed){
+                this.name=name;
+                this.weight=weight;
+                this.speed=speed;
+                this.alive=true;
+            }
+
+            spark(){
+                console.log("chip chip");
+            }
+        };
+
+        class Cat{
+            constructor(name,weight){
+                this.name=name;
+                this.weight=weight;
+                this.maxSpeed=25;
+            }            
+
+            spark(){
+                console.log("meo meo");
+            }
+
+            catchMouse(mouse){
+                if(this.maxSpeed>=mouse.speed && mouse.alive)
+                {
+                    mouse.alive=false;
+                    this.weight+= mouse.weight;
+                    this.maxSpeed -=mouse.weight;
+                    console.log("Mouse " + mouse.name + " is dead");
+                }
+                else 
+                {
+                    console.log("Missing mouse");
+                }
+            }
+        };
+
+        let cat1=new Cat("Tom",5);
+        let mouse1 = new Rat("Jerry",1,20);
+        let mouse2 = new Rat("Therry",4,10);
+        let mouse3 = new Rat("Bulma",6,15);
+
+        cat1.catchMouse(mouse3);
+        cat1.catchMouse(mouse2);
+        cat1.catchMouse(mouse1);
+
+    </script>
+    
+</body>
+</html>
