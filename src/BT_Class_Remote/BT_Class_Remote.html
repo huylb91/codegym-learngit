@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List</title>
+</head>
+<body>
+    <script>
+        class Remote{
+            constructor(id){
+                this.id=id;
+            }
+
+            changeVolume(tivi,newVolume){
+                tivi.changeVolume(newVolume);
+            }
+
+            changeChannel(tivi,newChannel){
+                tivi.changeChannel(newChannel);
+            }
+
+            turnOnTV(tivi){
+                if(tivi.status){
+                    console.log("Tivi đã bật trước đó");
+                }
+                else{
+                    tivi.status = true;
+                    console.log("Tivi đã bật xong");
+                }
+            }   
+
+            turnOffTV(tivi){
+                if(tivi.status){
+                    tivi.status = false;
+                    console.log("Tivi đã tắt xong");
+                }
+                else{                    
+                    console.log("Tivi đã tắt trước đó");
+                }
+            }   
+        };
+
+        class Tivi{
+            constructor(){
+                this.channel=0;
+                this.volume=0;
+                this.status=false;                
+            }            
+
+            changeChannel(newChannel){
+                this.channel = newChannel;
+            }
+
+            changeVolume(newVolume){
+                this.volume += newVolume;
+            }
+
+            getChannel(){
+                return this.channel;
+            }            
+            getVolume(){
+                return this.volume;
+            }           
+        };
+
+        let remote1 = new Remote();
+        let tivi1=new Tivi();
+        remote1.turnOnTV(tivi1);
+        tivi1.changeChannel(7);
+        console.log(tivi1.getChannel());
+        remote1.changeChannel(tivi1,3);
+        console.log(tivi1.getChannel());
+        remote1.changeVolume(tivi1,2);
+        console.log(tivi1.getVolume());
+        remote1.turnOffTV(tivi1);
+
+    </script>
+    
+</body>
+</html>
